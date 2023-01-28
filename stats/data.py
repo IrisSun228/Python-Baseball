@@ -20,3 +20,4 @@ identifiers = identifiers.fillna(method='ffill')
 identifiers.columns = ['game_id', 'year']
 
 games = pd.concat([games, identifiers], sort=False, axis=1)
+games = games.fillna(' ')
