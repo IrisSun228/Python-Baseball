@@ -9,3 +9,4 @@ pa = plays.loc[plays['player'].shift() != plays['player'], ['year', 'game_id', '
 pa = pa.groupby(['year', 'game_id', 'team']).size().reset_index(name='PA')
 
 events = events.set_index(['year', 'game_id', 'team', 'event_type'])
+events = events.unstack().fillna(0).reset_index()
